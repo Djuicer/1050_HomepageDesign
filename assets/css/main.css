@@ -319,7 +319,7 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left-color: rgba(255, 255, 255, 0.35);
+		border-left-color: rgba(255, 0, 0, 0.35);
 	}
 
 	code {
@@ -1941,7 +1941,7 @@ input, select, textarea {
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: rgba(255, 255, 255, 0.2);
+			background-color: rgba(241, 84, 84, 0.2);
 		}
 
 		input[type="submit"].icon:before,
@@ -4003,10 +4003,11 @@ body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left
 	text-align: center;
 }
 
-.member-features li h3 {
-	font-size: 1.25rem;
-	font-weight: 600;
-	line-height: 1.35;
+#first .member-features li h3 {
+  color: var(--umums-navy);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .member-features li p {
