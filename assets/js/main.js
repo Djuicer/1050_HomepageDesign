@@ -159,6 +159,63 @@
 			});
 		}
 
+	// Team & Representatives interactions.
+		var committeeModal = document.getElementById('committee-chart-modal');
+		var openCommitteeButton = document.getElementById('view-committee-chart');
+		var closeCommitteeButton = document.getElementById('close-committee-chart');
+		var repTabs = Array.prototype.slice.call(document.querySelectorAll('.rep-tab'));
+		var repPanel = document.getElementById('rep-panel-executive');
+		var lastFocusedElement = null;
+
+		if (openCommitteeButton && committeeModal) {
+			openCommitteeButton.addEventListener('click', function() {
+				lastFocusedElement = document.activeElement;
+				if (typeof committeeModal.showModal === 'function') {
+					committeeModal.showModal();
+					if (closeCommitteeButton)
+						closeCommitteeButton.focus();
+				}
+			});
+
+			var closeCommitteeModal = function() {
+				if (committeeModal.open)
+					committeeModal.close();
+				if (lastFocusedElement)
+					lastFocusedElement.focus();
+				else
+					openCommitteeButton.focus();
+			};
+
+			if (closeCommitteeButton)
+				closeCommitteeButton.addEventListener('click', closeCommitteeModal);
+
+			committeeModal.addEventListener('click', function(event) {
+				var rect = committeeModal.getBoundingClientRect();
+				var clickedBackdrop = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+				if (clickedBackdrop)
+					closeCommitteeModal();
+			});
+
+			committeeModal.addEventListener('cancel', function(event) {
+				event.preventDefault();
+				closeCommitteeModal();
+			});
+		}
+
+		if (repTabs.length && repPanel) {
+			repTabs.forEach(function(tab) {
+				tab.addEventListener('click', function() {
+					repTabs.forEach(function(otherTab) {
+						var isActive = otherTab === tab;
+						otherTab.classList.toggle('is-active', isActive);
+						otherTab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+						otherTab.setAttribute('tabindex', isActive ? '0' : '-1');
+					});
+					repPanel.setAttribute('aria-labelledby', tab.id);
+				});
+			});
+		}
+
 	// Scrolly.
 		$('.scrolly').scrolly({
 			speed: 1000

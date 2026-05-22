@@ -81,18 +81,55 @@
 						</li>
 					</ul>
 				</section>
-				<section id="second" class="main special">
-					<header class="major"><h2>Team &amp; Representatives</h2><p>UMUMS is led by student representatives and committee members who support advocacy, academics, wellbeing, events, and student life.</p></header>
-					<div class="committee-chart" role="img" aria-label="Placeholder for UMUMS committee organization chart">
-						<strong>Committee Chart</strong><span>Replace with final UMUMS organization chart</span>
+				<section id="second" class="main special representatives-section">
+					<header class="major"><h2>Meet Your Representatives</h2><p>UMUMS is led by student representatives and committee members who support advocacy, academics, wellbeing, events, and student life.</p></header>
+
+					<div class="committee-cta" aria-labelledby="committee-cta-title">
+						<h3 id="committee-cta-title">Committee Structure</h3>
+						<p>Explore the latest committee structure and role relationships.</p>
+						<button type="button" class="button primary" id="view-committee-chart" aria-haspopup="dialog" aria-controls="committee-chart-modal">View Committee Chart</button>
 					</div>
-					<ul class="roles-list">
-						<li>President</li><li>Secretary</li><li>Treasurer</li><li>Academic VP</li><li>Community &amp; Wellbeing VP</li><li>Social VP</li><li>Preclinical VP</li><li>Graduate VP</li><li>Aboriginal &amp; Torres Strait Islander VP</li>
-					</ul>
-					<div class="rep-grid">
-						<div>Executive</div><div>Elected</div><div>Appointed</div><div>Year Level</div><div>Major Events</div><div>Subcommittees</div>
+
+					<div class="rep-tabs" role="tablist" aria-label="Representative categories">
+						<button type="button" role="tab" aria-selected="true" aria-controls="rep-panel-executive" id="rep-tab-executive" class="rep-tab is-active" data-category="executive">Executive</button>
+						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-elected" class="rep-tab" data-category="elected">Elected</button>
+						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-appointed" class="rep-tab" data-category="appointed">Appointed</button>
+						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-year-level" class="rep-tab" data-category="year-level">Year Level</button>
+						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-major-events" class="rep-tab" data-category="major-events">Major Events</button>
+						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-subcommittees" class="rep-tab" data-category="subcommittees">Subcommittees</button>
 					</div>
-					<article class="featured-president"><h3>Jessie Berserk</h3><p>President</p><a href="mailto:president@umums.org">president@umums.org</a></article>
+
+					<div id="rep-panel-executive" class="rep-panel" role="tabpanel" aria-labelledby="rep-tab-executive">
+						<article class="featured-president">
+							<p class="featured-label">Executive Lead</p>
+							<h3>Jessie Berserk</h3>
+							<p class="rep-role">President</p>
+							<a href="mailto:president@umums.org">president@umums.org</a>
+						</article>
+
+						<div class="rep-card-grid" aria-label="Executive representative roles">
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">AV</span><p class="rep-role">Academic Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">SV</span><p class="rep-role">Social Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">GV</span><p class="rep-role">Graduate Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">PV</span><p class="rep-role">Preclinical Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">CW</span><p class="rep-role">Community &amp; Wellbeing VP</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">AT</span><p class="rep-role">Aboriginal &amp; Torres Strait Islander VP</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">SE</span><p class="rep-role">Secretary</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">TR</span><p class="rep-role">Treasurer</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+						</div>
+					</div>
+
+					<dialog id="committee-chart-modal" class="committee-modal" aria-labelledby="committee-modal-title">
+						<div class="committee-modal-inner">
+							<button type="button" class="committee-modal-close" id="close-committee-chart" aria-label="Close committee chart">Close</button>
+							<h3 id="committee-modal-title">Committee Chart</h3>
+							<!-- Replace this placeholder with: <img src="images/committee-chart.png" alt="UMUMS committee structure chart"> -->
+							<div class="committee-chart-placeholder" role="img" aria-label="Committee chart placeholder">
+								<strong>Committee Chart</strong>
+								<span>Replace with final UMUMS organization chart</span>
+							</div>
+						</div>
+					</dialog>
 				</section>
 				<section id="cta" class="main special">
 					<header class="major"><h2>Join / Contact / Help</h2><p>Become a member to access advocacy, resources, events, and student support.</p></header>
