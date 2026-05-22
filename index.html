@@ -18,66 +18,69 @@
 
 		<div id="wrapper">
 			<header id="header" class="alt umums-header">
-				<span class="logo" aria-hidden="true"><img src="images/logo.svg" alt="" /></span>
-				<p class="club-label">UMUMS Incorporated</p>
-				<h1>Welcome to UMUMS</h1>
-				<p>The Fictional Nosham Medical Student Society supporting community, wellbeing, academic life, events, and representation.</p>
+				<div class="brand-wrap">
+					<span class="logo" aria-hidden="true"><img src="images/logo.svg" alt="" /></span>
+					<div>
+						<p class="club-label">UMUMS Incorporated</p>
+						<p class="club-subtitle">University Medical Undergraduate Medical Society</p>
+					</div>
+				</div>
 			</header>
 
 			<nav id="nav" aria-label="Primary navigation">
 				<ul>
 					<li><a href="#home" class="active">Home</a></li>
-					<li><a href="#member-hub">Member Hub</a></li>
-					<li><a href="#meet-team">Meet the Team</a></li>
-					<li><a href="#representatives">Meet Your Representatives</a></li>
-					<li><a href="#join-contact">Join / Contact / Help</a></li>
+					<li><a href="#member-hub">Community and Wellbeing</a></li>
+					<li><a href="#meet-team">Academic Resources</a></li>
 					<li><a href="#join-contact" class="button primary nav-cta">Become a Member</a></li>
 				</ul>
 			</nav>
 
 			<main id="main-content">
 				<div id="main">
-					<section id="home" class="main spotlight umums-section">
+					<section id="home" class="main spotlight umums-section hero-section">
 						<div class="content">
+							<p class="eyebrow">Student Society</p>
 							<header class="major">
-								<h2>Home</h2>
+								<h1>Welcome to UMUMS.</h1>
 							</header>
-							<p><strong>Community and Wellbeing</strong> and <strong>Academic Resources</strong> are central to UMUMS. We connect students with peer support, resources, social activities, and professional representation throughout medical school.</p>
+							<p>The Fictional Nosham Medical Student Society supporting community, wellbeing, academic life, events, and representation.</p>
 							<ul class="actions">
 								<li><a href="#join-contact" class="button primary">Become a Member</a></li>
 								<li><a href="#meet-team" class="button">Meet the Team</a></li>
 							</ul>
 						</div>
-						<span class="image">
-							<!-- TODO: Replace with final UMUMS hero group photo -->
-							<img src="images/placeholders/hero-group.svg" alt="Future hero image showing UMUMS members gathered in a group photo." />
+						<span class="image group-photo-placeholder" role="img" aria-label="Placeholder showing where the final UMUMS group photo will be placed.">
+							<!-- TODO: Replace this CSS-only placeholder with the final UMUMS group photo. -->
+							<span class="placeholder-caption">Final Group Photo Placement</span>
 						</span>
 					</section>
 
 					<section id="member-hub" class="main special umums-section">
 						<header class="major">
+							<p class="eyebrow">Resources</p>
 							<h2>Member Hub</h2>
 							<p>Find news, study resources, and upcoming activities in one place.</p>
 						</header>
 						<div class="search-row">
-							<label for="site-search">Search UMUMS</label>
-							<input id="site-search" type="search" placeholder="Search memos, publications, events, representatives" />
+							<label for="site-search">Search UMUMS resources and representatives</label>
+							<input id="site-search" type="search" placeholder="Search memos, publications, events, and representative roles" aria-label="Search UMUMS resources and representatives" />
 						</div>
 						<div class="card-grid member-hub-grid" aria-label="UMUMS resources">
-							<article class="resource-card" data-search="umums memos announcements news">
-								<span class="icon solid fa-bullhorn" aria-hidden="true"></span>
+							<article class="resource-card card-memos" data-search="umums memos announcements news">
+								<span class="icon-placeholder" aria-hidden="true">📣</span>
 								<h3>UMUMS Memos</h3>
 								<p>Get announcements and news.</p>
 								<a href="#" class="button small">Read Memos</a>
 							</article>
-							<article class="resource-card" data-search="publications guides academic resources">
-								<span class="icon solid fa-book" aria-hidden="true"></span>
+							<article class="resource-card card-publications" data-search="publications guides academic resources">
+								<span class="icon-placeholder" aria-hidden="true">📘</span>
 								<h3>Publications</h3>
 								<p>Access UMUMS publications and guides.</p>
 								<a href="#" class="button small">Read Publications</a>
 							</article>
-							<article class="resource-card" data-search="events calendar upcoming community">
-								<span class="icon solid fa-calendar-alt" aria-hidden="true"></span>
+							<article class="resource-card card-events" data-search="events calendar upcoming community">
+								<span class="icon-placeholder" aria-hidden="true">📅</span>
 								<h3>Events Calendar</h3>
 								<p>See upcoming events.</p>
 								<a href="#" class="button small">View Events</a>
@@ -87,36 +90,28 @@
 
 					<section id="meet-team" class="main umums-section">
 						<header class="major">
+							<p class="eyebrow">Leadership</p>
 							<h2>Meet the Team</h2>
 							<p>UMUMS is led by student representatives and committee members who support advocacy, academics, wellbeing, and student life.</p>
 						</header>
 						<div class="team-layout">
 							<div>
 								<h3>Committee Structure</h3>
-								<!-- TODO: Replace with final committee/organization chart image -->
-								<img class="team-chart" src="images/placeholders/team-chart.svg" alt="Future UMUMS committee organization chart with executive and representative roles." />
+								<div class="chart-placeholder" role="img" aria-label="Placeholder chart showing UMUMS committee structure with connected role nodes.">
+									<span class="node center">President</span><span class="node n1">Academic VP</span><span class="node n2">Community VP</span><span class="node n3">Social VP</span><span class="node n4">Secretary</span><span class="node n5">Treasurer</span>
+								</div>
 							</div>
-							<div>
+							<div class="roles-card">
 								<h3>Key Roles</h3>
 								<ul>
-									<li>President</li>
-									<li>Secretary</li>
-									<li>Treasurer</li>
-									<li>Academic VP</li>
-									<li>Community &amp; Wellbeing VP</li>
-									<li>Social VP</li>
-									<li>Preclinical VP</li>
-									<li>Graduate VP</li>
-									<li>Aboriginal &amp; Torres Strait Islander VP</li>
+									<li>President</li><li>Secretary</li><li>Treasurer</li><li>Academic VP</li><li>Community &amp; Wellbeing VP</li><li>Social VP</li><li>Preclinical VP</li><li>Graduate VP</li><li>Aboriginal &amp; Torres Strait Islander VP</li>
 								</ul>
 							</div>
 						</div>
 					</section>
 
 					<section id="representatives" class="main special umums-section representatives-section">
-						<header class="major">
-							<h2>Meet Your Representatives</h2>
-						</header>
+						<header class="major"><p class="eyebrow">People</p><h2>Meet Your Representatives</h2></header>
 						<div class="filter-buttons" role="group" aria-label="Representative category filters">
 							<button class="button small is-active" type="button" data-filter="all" aria-pressed="true">Executive</button>
 							<button class="button small" type="button" data-filter="elected" aria-pressed="false">Elected</button>
@@ -125,40 +120,37 @@
 							<button class="button small" type="button" data-filter="events" aria-pressed="false">Major Events</button>
 							<button class="button small" type="button" data-filter="subcommittees" aria-pressed="false">Subcommittees</button>
 						</div>
+						<div class="president-feature rep-card" data-group="all elected" role="article">
+							<div class="avatar-sm" aria-hidden="true">JB</div>
+							<div><p class="role">President</p><h3>Jessie Berserk</h3><a href="mailto:president@umums.org">president@umums.org</a></div>
+						</div>
 						<div class="card-grid rep-grid">
-							<article class="rep-card" data-group="all elected">
-								<img src="images/placeholders/avatar-president.svg" alt="Future portrait of Jessie Berserk, UMUMS President." />
-								<h3>Jessie Berserk</h3><p>President</p><a href="mailto:president@umums.org">president@umums.org</a>
-							</article>
-							<article class="rep-card" data-group="all elected year-level"><img src="images/placeholders/avatar-academic-vp.svg" alt="Future portrait of the UMUMS Academic Vice President." /><h3>XXXX XXXXX</h3><p>Academic Vice President</p><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card" data-group="all elected events"><img src="images/placeholders/avatar-social-vp.svg" alt="Future portrait of the UMUMS Social Vice President." /><h3>XXXX XXXXX</h3><p>Social Vice President</p><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card" data-group="all appointed"><img src="images/placeholders/avatar-graduate-vp.svg" alt="Future portrait of the UMUMS Graduate Vice President." /><h3>XXXX XXXXX</h3><p>Graduate Vice President</p><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card" data-group="all elected"><img src="images/placeholders/avatar-preclinical-vp.svg" alt="Future portrait of the UMUMS Preclinical Vice President." /><h3>XXXX XXXXX</h3><p>Preclinical Vice President</p><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card" data-group="all appointed subcommittees"><img src="images/placeholders/avatar-community-vp.svg" alt="Future portrait of the UMUMS Community and Wellbeing Vice President." /><h3>XXXX XXXXX</h3><p>Community &amp; Wellbeing VP</p><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card" data-group="all appointed"><img src="images/placeholders/avatar-secretary.svg" alt="Future portrait of the UMUMS Secretary." /><h3>XXXX XXXXX</h3><p>Secretary</p><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card" data-group="all appointed"><img src="images/placeholders/avatar-treasurer.svg" alt="Future portrait of the UMUMS Treasurer." /><h3>XXXX XXXXX</h3><p>Treasurer</p><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card" data-group="all elected year-level"><div class="avatar-sm" aria-hidden="true">AV</div><p class="role">Academic Vice President</p><h3>XXXX XXXXX</h3><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card" data-group="all elected events"><div class="avatar-sm" aria-hidden="true">SV</div><p class="role">Social Vice President</p><h3>XXXX XXXXX</h3><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card" data-group="all appointed"><div class="avatar-sm" aria-hidden="true">GV</div><p class="role">Graduate Vice President</p><h3>XXXX XXXXX</h3><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card" data-group="all elected"><div class="avatar-sm" aria-hidden="true">PV</div><p class="role">Preclinical Vice President</p><h3>XXXX XXXXX</h3><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card" data-group="all appointed subcommittees"><div class="avatar-sm" aria-hidden="true">CW</div><p class="role">Community &amp; Wellbeing VP</p><h3>XXXX XXXXX</h3><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card" data-group="all appointed"><div class="avatar-sm" aria-hidden="true">SC</div><p class="role">Secretary</p><h3>XXXX XXXXX</h3><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<article class="rep-card" data-group="all appointed"><div class="avatar-sm" aria-hidden="true">TR</div><p class="role">Treasurer</p><h3>XXXX XXXXX</h3><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
 						</div>
 					</section>
 
 					<section id="join-contact" class="main special umums-section">
-						<header class="major">
-							<h2>Join / Contact / Help</h2>
-							<p>Become a member to access advocacy, resources, and events.</p>
-						</header>
-						<ul class="actions special">
-							<li><a href="#" class="button primary">Become a Member</a></li>
-							<li><a href="mailto:hello@umums.org" class="button">Contact UMUMS</a></li>
-						</ul>
-						<div class="quick-links">
-							<a href="#">Parking Guide</a><a href="#">Help</a><a href="#">Contact</a><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X/Twitter</a>
+						<header class="major"><p class="eyebrow">Get Involved</p><h2>Join / Contact / Help</h2><p>Become a member to access advocacy, resources, and events.</p></header>
+						<div class="join-grid">
+							<ul class="actions special"><li><a href="#" class="button primary">Become a Member</a></li><li><a href="mailto:hello@umums.org" class="button">Contact UMUMS</a></li></ul>
+							<div class="quick-links" aria-label="Quick access links"><a href="#">Parking Guide</a><a href="#">Help</a><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X / Twitter</a></div>
 						</div>
-						<p class="content">Email: <a href="mailto:hello@umums.org">hello@umums.org</a> | Office hours: Weekdays 9:00 AM - 4:00 PM</p>
+						<p class="contact-line"><strong>Email:</strong> <a href="mailto:hello@umums.org">hello@umums.org</a><span aria-hidden="true"> • </span><strong>Office hours:</strong> Weekdays 9:00 AM - 4:00 PM</p>
 					</section>
 				</div>
 			</main>
 
 			<footer id="footer">
-				<p class="copyright">&copy; UMUMS Incorporated. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				<div class="footer-inner">
+					<p>UMUMS Incorporated</p>
+					<p class="copyright">&copy; UMUMS Incorporated. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</div>
 			</footer>
 		</div>
 
