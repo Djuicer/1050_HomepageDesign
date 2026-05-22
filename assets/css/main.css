@@ -3984,7 +3984,6 @@ input[type="button"] {
 
 .nav-member-cta { opacity: 0; max-width: 0; overflow: hidden; transition: opacity .25s ease, max-width .25s ease, margin .25s ease; margin-left: 0; }
 body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left: .5rem; }
-.group-photo-placeholder { border-radius: var(--umums-radius); min-height: 17rem; display: flex; align-items: center; justify-content: center; flex-direction: column; background: linear-gradient(145deg,#e6f6f5,#fafefd); border: 2px dashed rgba(44, 166, 164, 0.75); color: var(--umums-navy); padding: 1rem; text-align: center; box-shadow: var(--umums-shadow); }
 .member-search-wrap { max-width: 56rem; margin: 0 auto 2rem; text-align: left; }
 .member-search-wrap label { display: block; font-weight: 600; color: var(--umums-navy); margin-bottom: .4rem; }
 .member-search-wrap input { width: 100%; background: #fff; border: 1px solid var(--umums-border); border-radius: .8rem; padding: .95rem 1rem; color: var(--umums-text); font-size: 1rem; }
@@ -4055,8 +4054,6 @@ body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left
 .representatives-header p { margin: 0 0 1rem; }
 .rep-committee-button { background: var(--umums-white); color: var(--umums-navy) !important; border: 1px solid var(--umums-navy); border-radius: 999px; font-weight: 600; box-shadow: none; }
 .rep-tabs { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: .2rem; margin: 1.4rem 0 1.8rem; background: rgba(255,255,255,.9); border: 1px solid var(--umums-border); border-radius: 999px; padding: .3rem; box-shadow: 0 8px 16px rgba(16,42,67,.08); }
-.rep-tab { background: transparent; border: 0; border-radius: 999px; color: var(--umums-navy); font-weight: 650; font-size: .95rem; padding: .86rem .52rem; line-height: 1.2; }
-.rep-tab.is-active, .rep-tab[aria-selected="true"] { background: var(--umums-orange); color: #fff; box-shadow: 0 4px 12px rgba(242,106,46,.34); transform: translateY(-1px); }
 .rep-tab:focus-visible, .rep-card a:focus-visible, .featured-president a:focus-visible, .rep-committee-button:focus-visible, .committee-modal-close:focus-visible { outline: 3px solid var(--umums-teal); outline-offset: 2px; }
 .rep-tab {
 	background: transparent;
@@ -4078,7 +4075,7 @@ body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left
 .rep-tab[aria-selected="true"] {
 	background: var(--umums-orange);
 	color: #fff;
-	box-shadow: 0 4px 12px rgba(242,106,46,34);
+	box-shadow: 0 4px 12px rgba(242,106,46,.34);
 	transform: translateY(-1px);
 }
 
