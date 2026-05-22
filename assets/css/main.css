@@ -4087,6 +4087,16 @@ body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left
 	background: var(--umums-orange);
 	color: #fff;
 }
+.rep-panels-wrap { position: relative; overflow: hidden; }
+.rep-panel { transition: transform .28s ease, opacity .28s ease; }
+.rep-panel[hidden] { display: none; }
+.rep-panel.is-entering { opacity: 0; transform: translateX(0); }
+.rep-panel.is-entering.slide-left { transform: translateX(4%); }
+.rep-panel.is-entering.slide-right { transform: translateX(-4%); }
+.rep-panel.is-entering.is-visible { opacity: 1; transform: translateX(0); }
+.rep-panel.is-leaving { opacity: 1; transform: translateX(0); }
+.rep-panel.is-leaving.slide-left.is-hidden { opacity: 0; transform: translateX(-4%); }
+.rep-panel.is-leaving.slide-right.is-hidden { opacity: 0; transform: translateX(4%); }
 .featured-president { background: linear-gradient(135deg, var(--umums-navy), var(--umums-navy-dark)); color: #fff; padding: 1.4rem 1.5rem; margin: 0 0 1rem; text-align: left; display: flex; align-items: center; gap: 1rem; border: 1px solid rgba(255,255,255,.16); }
 .featured-avatar,
 .rep-avatar { width: 2.8rem; height: 2.8rem; border-radius: 50%; background: rgb(255, 211, 173); color: #18315f; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.05rem; }
@@ -4110,6 +4120,7 @@ body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left
 @media screen and (max-width: 1280px) { .rep-tabs { grid-template-columns: repeat(3,minmax(0,1fr)); border-radius: 1rem; } }
 @media screen and (max-width: 980px) { .rep-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media screen and (max-width: 640px) { .rep-tabs, .rep-card-grid { grid-template-columns: 1fr; } .featured-president { padding: 1.15rem; align-items: flex-start; } .featured-content h3 { font-size: 2rem; } .rep-card { min-height: 0; } }
+@media (prefers-reduced-motion: reduce) { .rep-panel { transition: none !important; animation: none !important; transform: none !important; opacity: 1 !important; } }
 #footer { background: var(--umums-navy); color: rgba(255,255,255,.9); padding: 2.7em 2.8em 1.7em; margin: 0 auto 2em; max-width: 72rem; width: calc(100%); }
 #footer h2 { color: #fff; font-size: 1.25em; font-weight: 600; margin-bottom: .5em; }
 #footer p, #footer dd, #footer dt { color: rgba(255,255,255,.9); font-size: 1rem; line-height: 1.6; }

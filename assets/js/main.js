@@ -164,7 +164,8 @@
 		var openCommitteeButton = document.getElementById('view-committee-chart');
 		var closeCommitteeButton = document.getElementById('close-committee-chart');
 		var repTabs = Array.prototype.slice.call(document.querySelectorAll('.rep-tab'));
-		var repPanel = document.getElementById('rep-panel-executive');
+		var repPanels = Array.prototype.slice.call(document.querySelectorAll('.rep-panel'));
+		var repPanelsWrap = document.querySelector('.rep-panels-wrap');
 		var lastFocusedElement = null;
 
 		if (openCommitteeButton && committeeModal) {
@@ -209,29 +210,75 @@
 			});
 		}
 
-		if (repTabs.length && repPanel) {
-			repTabs.forEach(function(tab) {
-				tab.addEventListener('click', function() {
-					repTabs.forEach(function(otherTab) {
-						var isActive = otherTab === tab;
-						otherTab.classList.toggle('is-active', isActive);
-						otherTab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-						otherTab.setAttribute('tabindex', isActive ? '0' : '-1');
-					});
-					repPanel.setAttribute('aria-labelledby', tab.id);
+		if (repTabs.length && repPanels.length && repPanelsWrap) {
+			var activeTabIndex = repTabs.findIndex(function(tab) { return tab.getAttribute('aria-selected') === 'true'; });
+			if (activeTabIndex < 0) activeTabIndex = 0;
+			var reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+			var isAnimating = false;
+			var setActiveTabState = function(nextIndex) {
+				repTabs.forEach(function(otherTab, index) {
+					var isActive = index === nextIndex;
+					otherTab.classList.toggle('is-active', isActive);
+					otherTab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+					otherTab.setAttribute('tabindex', isActive ? '0' : '-1');
 				});
+			};
+			var activateTab = function(nextIndex) {
+				if (isAnimating || nextIndex === activeTabIndex) return;
+				var currentTab = repTabs[activeTabIndex];
+				var nextTab = repTabs[nextIndex];
+				var currentPanel = document.getElementById(currentTab.getAttribute('aria-controls'));
+				var nextPanel = document.getElementById(nextTab.getAttribute('aria-controls'));
+				if (!currentPanel || !nextPanel) return;
+				var movingRight = nextIndex > activeTabIndex;
+				var directionClass = movingRight ? 'slide-left' : 'slide-right';
+				setActiveTabState(nextIndex);
+				if (reduceMotionQuery.matches) {
+					currentPanel.hidden = true;
+					currentPanel.setAttribute('aria-hidden', 'true');
+					currentPanel.classList.remove('is-active');
+					nextPanel.hidden = false;
+					nextPanel.removeAttribute('aria-hidden');
+					nextPanel.classList.add('is-active');
+					activeTabIndex = nextIndex;
+					return;
+				}
+				isAnimating = true;
+				nextPanel.hidden = false;
+				nextPanel.removeAttribute('aria-hidden');
+				nextPanel.classList.add('is-active', 'is-entering', directionClass);
+				currentPanel.classList.add('is-leaving', directionClass);
+				window.requestAnimationFrame(function() {
+					nextPanel.classList.add('is-visible');
+					currentPanel.classList.add('is-hidden');
+				});
+				window.setTimeout(function() {
+					currentPanel.hidden = true;
+					currentPanel.setAttribute('aria-hidden', 'true');
+					currentPanel.classList.remove('is-active', 'is-leaving', 'slide-left', 'slide-right', 'is-hidden');
+					nextPanel.classList.remove('is-entering', 'slide-left', 'slide-right', 'is-visible');
+					activeTabIndex = nextIndex;
+					isAnimating = false;
+				}, 280);
+			};
+			repTabs.forEach(function(tab, index) {
+				tab.addEventListener('click', function() { activateTab(index); });
 				tab.addEventListener('keydown', function(event) {
-					var currentIndex = repTabs.indexOf(tab);
-					var nextIndex = currentIndex;
-					if (event.key === 'ArrowRight')
-						nextIndex = (currentIndex + 1) % repTabs.length;
-					if (event.key === 'ArrowLeft')
-						nextIndex = (currentIndex - 1 + repTabs.length) % repTabs.length;
-					if (nextIndex !== currentIndex) {
-						event.preventDefault();
-						repTabs[nextIndex].focus();
-						repTabs[nextIndex].click();
+					var targetIndex = index;
+					var shouldActivate = false;
+					if (event.key === 'ArrowRight') targetIndex = (index + 1) % repTabs.length;
+					else if (event.key === 'ArrowLeft') targetIndex = (index - 1 + repTabs.length) % repTabs.length;
+					else if (event.key === 'Home') targetIndex = 0;
+					else if (event.key === 'End') targetIndex = repTabs.length - 1;
+					else if (event.key === 'Enter' || event.key === ' ') { shouldActivate = true; }
+					else return;
+					event.preventDefault();
+					if (shouldActivate) {
+						activateTab(index);
+						return;
 					}
+					repTabs[targetIndex].focus();
+					activateTab(targetIndex);
 				});
 			});
 		}
