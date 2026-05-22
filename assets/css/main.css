@@ -3815,8 +3815,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 	outline-offset: 3px;
 }
 
-.skip-link { position: absolute; left: 0.5rem; top: -3rem; background: var(--umums-navy); color: #fff; padding: 0.6rem 1rem; z-index: 9999; border-radius: 0.4rem; }
-.skip-link:focus { top: 0.5rem; }
 #header.alt { padding-top: 4.5rem; }
 #header.alt .logo img { max-width: 6rem; }
 
