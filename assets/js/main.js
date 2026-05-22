@@ -175,11 +175,18 @@
 					if (closeCommitteeButton)
 						closeCommitteeButton.focus();
 				}
+				else {
+					committeeModal.setAttribute('open', 'open');
+					if (closeCommitteeButton)
+						closeCommitteeButton.focus();
+				}
 			});
 
 			var closeCommitteeModal = function() {
-				if (committeeModal.open)
+				if (committeeModal.open && typeof committeeModal.close === 'function')
 					committeeModal.close();
+				else
+					committeeModal.removeAttribute('open');
 				if (lastFocusedElement)
 					lastFocusedElement.focus();
 				else
@@ -212,6 +219,19 @@
 						otherTab.setAttribute('tabindex', isActive ? '0' : '-1');
 					});
 					repPanel.setAttribute('aria-labelledby', tab.id);
+				});
+				tab.addEventListener('keydown', function(event) {
+					var currentIndex = repTabs.indexOf(tab);
+					var nextIndex = currentIndex;
+					if (event.key === 'ArrowRight')
+						nextIndex = (currentIndex + 1) % repTabs.length;
+					if (event.key === 'ArrowLeft')
+						nextIndex = (currentIndex - 1 + repTabs.length) % repTabs.length;
+					if (nextIndex !== currentIndex) {
+						event.preventDefault();
+						repTabs[nextIndex].focus();
+						repTabs[nextIndex].click();
+					}
 				});
 			});
 		}

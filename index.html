@@ -82,40 +82,43 @@
 					</ul>
 				</section>
 				<section id="second" class="main special representatives-section">
-					<header class="major"><h2>Meet Your Representatives</h2><p>UMUMS is led by student representatives and committee members who support advocacy, academics, wellbeing, events, and student life.</p></header>
+					<div class="representatives-wrap">
+						<header class="representatives-header">
+							<p class="rep-eyebrow">Our Representatives</p>
+							<h2>Meet Your Representatives</h2>
+							<p>Connect with the dedicated leaders of UMUMS.</p>
+							<button type="button" class="button rep-committee-button" id="view-committee-chart" aria-haspopup="dialog" aria-controls="committee-chart-modal">View Committee Chart</button>
+						</header>
 
-					<div class="committee-cta" aria-labelledby="committee-cta-title">
-						<h3 id="committee-cta-title">Committee Structure</h3>
-						<p>Explore the latest committee structure and role relationships.</p>
-						<button type="button" class="button primary" id="view-committee-chart" aria-haspopup="dialog" aria-controls="committee-chart-modal">View Committee Chart</button>
-					</div>
+						<div class="rep-tabs" role="tablist" aria-label="Representative categories">
+							<button type="button" role="tab" aria-selected="true" aria-controls="rep-panel-executive" id="rep-tab-executive" class="rep-tab is-active" data-category="executive">Executive</button>
+							<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-elected" class="rep-tab" data-category="elected" tabindex="-1">Elected</button>
+							<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-appointed" class="rep-tab" data-category="appointed" tabindex="-1">Appointed</button>
+							<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-year-level" class="rep-tab" data-category="year-level" tabindex="-1">Year Level</button>
+							<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-major-events" class="rep-tab" data-category="major-events" tabindex="-1">Major Events</button>
+							<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-subcommittees" class="rep-tab" data-category="subcommittees" tabindex="-1">Subcommittees</button>
+						</div>
 
-					<div class="rep-tabs" role="tablist" aria-label="Representative categories">
-						<button type="button" role="tab" aria-selected="true" aria-controls="rep-panel-executive" id="rep-tab-executive" class="rep-tab is-active" data-category="executive">Executive</button>
-						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-elected" class="rep-tab" data-category="elected">Elected</button>
-						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-appointed" class="rep-tab" data-category="appointed">Appointed</button>
-						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-year-level" class="rep-tab" data-category="year-level">Year Level</button>
-						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-major-events" class="rep-tab" data-category="major-events">Major Events</button>
-						<button type="button" role="tab" aria-selected="false" aria-controls="rep-panel-executive" id="rep-tab-subcommittees" class="rep-tab" data-category="subcommittees">Subcommittees</button>
-					</div>
+						<div id="rep-panel-executive" class="rep-panel" role="tabpanel" aria-labelledby="rep-tab-executive">
+							<article class="featured-president">
+								<span class="featured-avatar" aria-hidden="true">JB</span>
+								<div class="featured-content">
+									<p class="featured-label">President</p>
+									<h3>Jessie Berserk</h3>
+									<a href="mailto:president@umums.org">president@umums.org</a>
+								</div>
+							</article>
 
-					<div id="rep-panel-executive" class="rep-panel" role="tabpanel" aria-labelledby="rep-tab-executive">
-						<article class="featured-president">
-							<p class="featured-label">Executive Lead</p>
-							<h3>Jessie Berserk</h3>
-							<p class="rep-role">President</p>
-							<a href="mailto:president@umums.org">president@umums.org</a>
-						</article>
-
-						<div class="rep-card-grid" aria-label="Executive representative roles">
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">AV</span><p class="rep-role">Academic Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">SV</span><p class="rep-role">Social Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">GV</span><p class="rep-role">Graduate Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">PV</span><p class="rep-role">Preclinical Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">CW</span><p class="rep-role">Community &amp; Wellbeing VP</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">AT</span><p class="rep-role">Aboriginal &amp; Torres Strait Islander VP</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">SE</span><p class="rep-role">Secretary</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
-							<article class="rep-card"><span class="rep-avatar" aria-hidden="true">TR</span><p class="rep-role">Treasurer</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							<div class="rep-card-grid" aria-label="Executive representative roles">
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Academic<br />Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Social<br />Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Graduate<br />Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Preclinical<br />Vice President</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Community<br />&amp; Wellbeing VP</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Aboriginal<br />&amp; Torres Strait VP</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Secretary</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+								<article class="rep-card"><span class="rep-avatar" aria-hidden="true">XX</span><p class="rep-role">Treasurer</p><h4>XXXX XXXXX</h4><a href="mailto:xxxxx@umums.org">xxxxx@umums.org</a></article>
+							</div>
 						</div>
 					</div>
 
