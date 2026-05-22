@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Decorative community placeholder</title>
+  <desc id="desc">Optional future decorative UMUMS community image.</desc>
+  <rect width="1200" height="500" fill="#effcfb"/>
+  <path d="M0,340 C160,290 240,390 400,340 C560,290 640,390 800,340 C960,290 1040,390 1200,340 L1200,500 L0,500 Z" fill="#d4f2ef"/>
+  <text x="600" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#0f2f50">Optional Decorative Image Area</text>
+</svg>

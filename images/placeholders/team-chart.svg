@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">UMUMS team chart placeholder</title>
+  <desc id="desc">Placeholder for future committee organization chart.</desc>
+  <rect width="1200" height="800" fill="#fff4ec"/>
+  <rect x="40" y="40" width="1120" height="720" rx="24" fill="#ffffff" stroke="#ef6a4b" stroke-width="6" stroke-dasharray="10 10"/>
+  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="56" fill="#0f2f50">Committee Chart</text>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#ef6a4b">Replace with final UMUMS organization chart</text>
+</svg>
