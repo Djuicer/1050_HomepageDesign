@@ -1,0 +1,33 @@
+:root {
+  --umums-navy: #0f2f50;
+  --umums-coral: #ef6a4b;
+  --umums-teal: #2da8a5;
+  --umums-cream: #fff4ec;
+  --umums-white: #ffffff;
+  --umums-shadow: 0 8px 30px rgba(15, 47, 80, 0.11);
+}
+body { background: linear-gradient(180deg, #f9fcff 0%, #fff 25%, #fff7ef 100%); }
+.skip-link { position:absolute; left:-9999px; }
+.skip-link:focus { left:1rem; top:1rem; background:var(--umums-coral); color:#fff; padding:.5rem .75rem; z-index:1000; }
+#nav { position: sticky; top: 0; z-index: 10; }
+.umums-header h1, h2, h3 { color: var(--umums-navy); }
+.club-label { letter-spacing: .15em; text-transform: uppercase; color: var(--umums-teal); font-weight: 700; }
+.umums-section { border-radius: 1.2rem; box-shadow: var(--umums-shadow); border: 1px solid rgba(15,47,80,.08); }
+.umums-section::before { content: ""; display:block; height: 8px; border-radius: 1rem 1rem 0 0; background: repeating-linear-gradient(90deg, var(--umums-coral), var(--umums-coral) 40px, var(--umums-teal) 40px, var(--umums-teal) 80px); opacity:.18; }
+.button.primary, input[type="submit"].primary { background-color: var(--umums-coral) !important; box-shadow: 0 4px 14px rgba(239,106,75,.35); }
+.button { border-radius: .75rem; }
+.button:focus, a:focus, input:focus, button:focus { outline: 3px solid var(--umums-teal); outline-offset: 2px; }
+.card-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+.resource-card, .rep-card { background: var(--umums-white); border-radius: 1rem; padding:1.25rem; box-shadow: var(--umums-shadow); text-align:left; }
+.member-hub-grid .resource-card:nth-child(2) { background: #effcfb; }
+.representatives-section { background: var(--umums-cream); }
+.rep-card img, .team-chart { width:100%; border-radius:.75rem; margin-bottom:.75rem; }
+.filter-buttons { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-bottom:1.5rem; }
+.filter-buttons .button.is-active { background: var(--umums-teal) !important; color:#fff !important; border-color: var(--umums-teal) !important; }
+.search-row { max-width: 30rem; margin: 0 auto 1.5rem; text-align:left; }
+.search-row label { display:block; margin-bottom:.25rem; font-weight:700; color:var(--umums-navy); }
+.search-row input { border-radius:.65rem; }
+.team-layout { display:grid; grid-template-columns:2fr 1fr; gap:1.5rem; align-items:start; }
+.quick-links { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin: 1rem 0; }
+.quick-links a { background: #fff; border:1px solid rgba(15,47,80,.15); padding:.4rem .7rem; border-radius:.55rem; }
+@media screen and (max-width: 980px){ .team-layout{ grid-template-columns:1fr; } #nav ul { flex-wrap:wrap; } }
