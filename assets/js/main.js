@@ -115,6 +115,50 @@
 
 		}
 
+
+	// Nav member CTA reveal.
+		var heroMemberCta = document.getElementById('hero-member-cta');
+		if (heroMemberCta) {
+			var updateMemberNavState = function() {
+				var rect = heroMemberCta.getBoundingClientRect();
+				var visible = rect.bottom > 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight);
+				document.body.classList.toggle('show-member-cta', !visible);
+			};
+
+			if ('IntersectionObserver' in window) {
+				var heroObserver = new IntersectionObserver(function(entries) {
+					entries.forEach(function(entry) {
+						document.body.classList.toggle('show-member-cta', !entry.isIntersecting);
+					});
+				}, { threshold: 0.1 });
+				heroObserver.observe(heroMemberCta);
+			}
+			else {
+				window.addEventListener('scroll', updateMemberNavState, { passive: true });
+				window.addEventListener('resize', updateMemberNavState);
+				updateMemberNavState();
+			}
+		}
+
+	// Member Hub search filter.
+		var memberSearchInput = document.getElementById('member-search');
+		var memberSearchEmpty = document.getElementById('member-search-empty');
+		var memberCards = Array.prototype.slice.call(document.querySelectorAll('.member-features li'));
+		if (memberSearchInput && memberCards.length) {
+			memberSearchInput.addEventListener('input', function() {
+				var term = memberSearchInput.value.trim().toLowerCase();
+				var visibleCount = 0;
+				memberCards.forEach(function(card) {
+					var searchable = (card.getAttribute('data-search') || '') + ' ' + card.textContent;
+					var matches = searchable.toLowerCase().indexOf(term) !== -1;
+					card.hidden = !matches;
+					if (matches) visibleCount++;
+				});
+				if (memberSearchEmpty)
+					memberSearchEmpty.hidden = visibleCount !== 0;
+			});
+		}
+
 	// Scrolly.
 		$('.scrolly').scrolly({
 			speed: 1000
