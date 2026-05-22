@@ -215,6 +215,16 @@
 			if (activeTabIndex < 0) activeTabIndex = 0;
 			var reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 			var isAnimating = false;
+			var getPanelHeight = function(panel) {
+				var previousHidden = panel.hidden;
+				if (previousHidden) panel.hidden = false;
+				var height = panel.offsetHeight;
+				if (previousHidden) panel.hidden = true;
+				return height;
+			};
+			var syncPanelsWrapHeight = function(panel) {
+				repPanelsWrap.style.minHeight = getPanelHeight(panel) + 'px';
+			};
 			var setActiveTabState = function(nextIndex) {
 				repTabs.forEach(function(otherTab, index) {
 					var isActive = index === nextIndex;
@@ -233,6 +243,7 @@
 				var movingRight = nextIndex > activeTabIndex;
 				var directionClass = movingRight ? 'slide-left' : 'slide-right';
 				setActiveTabState(nextIndex);
+				syncPanelsWrapHeight(currentPanel);
 				if (reduceMotionQuery.matches) {
 					currentPanel.hidden = true;
 					currentPanel.setAttribute('aria-hidden', 'true');
@@ -241,9 +252,12 @@
 					nextPanel.removeAttribute('aria-hidden');
 					nextPanel.classList.add('is-active');
 					activeTabIndex = nextIndex;
+					syncPanelsWrapHeight(nextPanel);
 					return;
 				}
 				isAnimating = true;
+				repPanelsWrap.classList.add('is-animating');
+				repPanelsWrap.style.minHeight = Math.max(getPanelHeight(currentPanel), getPanelHeight(nextPanel)) + 'px';
 				nextPanel.hidden = false;
 				nextPanel.removeAttribute('aria-hidden');
 				nextPanel.classList.add('is-active', 'is-entering', directionClass);
@@ -258,9 +272,17 @@
 					currentPanel.classList.remove('is-active', 'is-leaving', 'slide-left', 'slide-right', 'is-hidden');
 					nextPanel.classList.remove('is-entering', 'slide-left', 'slide-right', 'is-visible');
 					activeTabIndex = nextIndex;
+					repPanelsWrap.classList.remove('is-animating');
+					syncPanelsWrapHeight(nextPanel);
 					isAnimating = false;
 				}, 280);
 			};
+			syncPanelsWrapHeight(repPanels[activeTabIndex]);
+			window.addEventListener('resize', function() {
+				if (isAnimating) return;
+				var activePanel = document.getElementById(repTabs[activeTabIndex].getAttribute('aria-controls'));
+				if (activePanel) syncPanelsWrapHeight(activePanel);
+			});
 			repTabs.forEach(function(tab, index) {
 				tab.addEventListener('click', function() { activateTab(index); });
 				tab.addEventListener('keydown', function(event) {

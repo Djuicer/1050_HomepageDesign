@@ -4087,8 +4087,10 @@ body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left
 	background: var(--umums-orange);
 	color: #fff;
 }
-.rep-panels-wrap { position: relative; overflow: hidden; }
-.rep-panel { transition: transform .28s ease, opacity .28s ease; }
+.rep-panels-wrap { position: relative; overflow: hidden; min-height: 0; }
+.rep-panels-wrap.is-animating { position: relative; }
+.rep-panels-wrap.is-animating .rep-panel { position: absolute; inset: 0; width: 100%; }
+.rep-panel { width: 100%; transition: transform .28s ease, opacity .28s ease; will-change: transform, opacity; }
 .rep-panel[hidden] { display: none; }
 .rep-panel.is-entering { opacity: 0; transform: translateX(0); }
 .rep-panel.is-entering.slide-left { transform: translateX(4%); }
