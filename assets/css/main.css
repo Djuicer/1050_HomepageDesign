@@ -3842,8 +3842,14 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 	color: var(--umums-muted);
 }
 
+
+#main h3 {
+	color: var(--umums-cream);
+	letter-spacing: -0.01em;
+}
+
+
 #main h2,
-#main h3,
 #main h4 {
 	color: var(--umums-navy);
 	letter-spacing: -0.01em;
