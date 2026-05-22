@@ -3872,15 +3872,22 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 .button {
-	border: 1px solid var(--umums-navy);
+	border: 2px solid var(--umums-navy);
 	color: var(--umums-navy) !important;
 	background-color: var(--umums-white);
+	box-shadow: 0 3px 10px rgba(16, 42, 67, 0.12);
 }
 
 .button:hover {
-	border-color: var(--umums-navy-dark);
-	background-color: var(--umums-peach);
-	color: var(--umums-navy-dark) !important;
+	border-color: var(--umums-navy);
+	background-color: var(--umums-navy);
+	color: var(--umums-white) !important;
+}
+
+.button:not(.primary):focus,
+.button:not(.primary):focus-visible,
+.button:not(.primary):active {
+	border-color: var(--umums-navy);
 }
 
 .button:focus-visible {
@@ -4005,3 +4012,22 @@ body.show-member-cta .nav-member-cta { opacity: 1; max-width: 14rem; margin-left
 @media screen and (max-width: 480px) { #footer { width: calc(100% - 2em); padding: 2em 1.25em 1.4em; } }
 @media screen and (max-width: 360px) { #footer { width: 100%; } }
 @media screen and (max-width: 980px) { body.show-member-cta .nav-member-cta { display: none; } }
+
+#footer .button:not(.primary),
+.featured-president .button:not(.primary),
+.main.style2 .button:not(.primary) {
+	background: var(--umums-white);
+	color: var(--umums-navy) !important;
+	border-color: var(--umums-white);
+}
+
+#footer .button:not(.primary):hover,
+#footer .button:not(.primary):focus-visible,
+.featured-president .button:not(.primary):hover,
+.featured-president .button:not(.primary):focus-visible,
+.main.style2 .button:not(.primary):hover,
+.main.style2 .button:not(.primary):focus-visible {
+	background: var(--umums-navy);
+	color: var(--umums-white) !important;
+	border-color: var(--umums-white);
+}
